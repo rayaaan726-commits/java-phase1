@@ -5,7 +5,7 @@ public class StudentDemo {
 	public static Student findTopStudent(ArrayList<Student> students) {
 		Student top = students.get(0);
 		for(Student s : students) {
-			if (s.score > top.score) {
+			if (s.getScore() > top.getScore()) {
 				top = s;
 			}
 			
@@ -24,11 +24,11 @@ public class StudentDemo {
 		students.add(new Student("Ali", 65));
 		
 		Student top = findTopStudent(students);
-        System.out.println("Top student: " + top.name);
+        System.out.println("Top student: " + top.getName());
 		
-		s1.printInfo();
-		s2.printInfo();
-		s3.printInfo();
+		s1.toString();
+		s2.toString();
+		s3.toString();
 		
 		//System.out.println(s1.name);
 		
@@ -46,8 +46,14 @@ public class StudentDemo {
 		
 
 		for (Student s : students) {
-		    s.printInfo();
+		    s.toString();
 		}
+		
+		Student s = new Student("Sara", 92);
+		s.setScore(150);                 // expected: Invalid score: 150
+		System.out.println(s);           // expected: Sara: 92 (A)
+		s.setScore(80);
+		System.out.println(s);           // expected: Sara: 80 (B)
 
 	}
 

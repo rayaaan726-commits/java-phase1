@@ -2,18 +2,49 @@ package phase1;
 
 public class Student {
 	
-	String name;
-	int score;
+	private String name;
+	private int score;
 	
 	
 	public Student(String name, int score) {
 
 		this.name = name;
-		this.score = score;
+		 setScore(score); 
 	}
 	
-	public void printInfo() {
-		System.out.println(name +": "+ score +" ("+ getGrade() +")");
+	
+	
+	public String getName() {
+		return name;
+	}
+
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+
+	public int getScore() {
+		return score;
+	}
+
+
+
+	public void setScore(int score) {
+		if (score >= 0 && score <= 100) {
+	        this.score = score;
+	    } else {
+	        System.out.println("Invalid score: " + score);
+	    }
+	}
+
+
+
+	@Override
+	public String toString() {
+	    return name + ": " + score + " (" + getGrade() + ")";
 	}
 	
 	// Exercise 9 
