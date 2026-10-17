@@ -50,11 +50,12 @@ public class StudentDemo {
 		}
 		
 		Student s = new Student("Sara", 92);
-		s.setScore(150);                 // expected: Invalid score: 150
-		System.out.println(s);           // expected: Sara: 92 (A)
-		s.setScore(80);
-		System.out.println(s);           // expected: Sara: 80 (B)
-
+		try {
+		    s.setScore(150);
+		} catch (IllegalArgumentException e) {
+		    System.out.println("Rejected: " + e.getMessage());
+		}
+		System.out.println(s);    // expected: Sara: 92 (A)
 	}
 
 }

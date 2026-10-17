@@ -33,11 +33,10 @@ public class Student {
 
 
 	public void setScore(int score) {
-		if (score >= 0 && score <= 100) {
-	        this.score = score;
-	    } else {
-	        System.out.println("Invalid score: " + score);
+	    if (score < 0 || score > 100) {
+	        throw new IllegalArgumentException("Score must be 0-100, but was " + score);
 	    }
+	    this.score = score;
 	}
 
 
