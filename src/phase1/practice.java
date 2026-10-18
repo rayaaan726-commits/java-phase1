@@ -1,6 +1,22 @@
 package phase1;
 import java.util.Scanner;
 public class practice {
+	
+	// Count digits 
+	
+	public static int countDigits(int n) {
+		int count = 0;
+		
+		if (n == 0) {
+		    return 1;
+		}
+		
+		while(n != 0) {
+			n = n /10;
+			count ++;
+		}
+		return count;
+	}
 	public static void main(String args []) {
 		System.out.println("Practice");
 		
@@ -27,13 +43,16 @@ public class practice {
 			System.out.println("wrong , you entered an age bigger than 100");
 		
 		
-		
+		// print triangle
 		for (int i = 0; i < 5; i++) {
 			for (int j = 0; j <= i; j++) {
 				System.out.print("*");
 			}
 			System.out.println();
 		}
+		System.out.println("__________________________________________________");
+		// Count digits
+		System.out.println(countDigits(1));
 	}
 
 }
