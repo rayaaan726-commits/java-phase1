@@ -1,13 +1,13 @@
 package phase1;
 
-public class Student {
+public class Student extends Person{
 	
-	private String name;
+	
 	private int score;
 	
 	
 	public Student(String name, int score) {
-
+		super(name);
 		this.name = name;
 		 setScore(score); 
 	}

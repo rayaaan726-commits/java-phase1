@@ -56,6 +56,17 @@ public class StudentDemo {
 		    System.out.println("Rejected: " + e.getMessage());
 		}
 		System.out.println(s);    // expected: Sara: 92 (A)
+		
+		System.out.println("_____________________________________");
+		Student s4 = new Student("Ahmad", 55);
+		Teacher t1 = new Teacher("Abdullah", "Mathmatics");
+		
+		System.out.println(s4);
+		System.out.println(t1);
 	}
 
+	
+	
+
+	
 }

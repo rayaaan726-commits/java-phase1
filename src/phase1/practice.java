@@ -1,4 +1,5 @@
 package phase1;
+import java.util.Iterator;
 import java.util.Scanner;
 public class practice {
 	
@@ -16,6 +17,18 @@ public class practice {
 			count ++;
 		}
 		return count;
+	}
+	
+	// find Min number
+	
+	public static int findMin(int[] arr) {
+		int min = arr[0];
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] < min) {
+				min = arr[i];
+			}
+		}
+		return min;
 	}
 	public static void main(String args []) {
 		System.out.println("Practice");
@@ -53,6 +66,8 @@ public class practice {
 		System.out.println("__________________________________________________");
 		// Count digits
 		System.out.println(countDigits(1));
+		System.out.println("__________________________________________________");
+		System.out.println(findMin(new int[]{-3, -9, -1}));
 	}
 
 }
