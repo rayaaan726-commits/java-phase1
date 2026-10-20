@@ -1,6 +1,6 @@
 package phase1;
 
-public class Student extends Person{
+public class Student extends Person implements Reportable {
 	
 	
 	private int score;
@@ -45,6 +45,11 @@ public class Student extends Person{
 	public String toString() {
 	    return name + ": " + score + " (" + getGrade() + ")";
 	}
+	
+	@Override
+    public String getReport() {
+        return getName() + " scored " + score + " (" + getGrade() + ")";
+    }
 	
 	// Exercise 9 
 	public  String getGrade () {

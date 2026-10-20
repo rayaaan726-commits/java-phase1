@@ -1,6 +1,6 @@
 package phase1;
 
-public class Teacher extends Person{
+public class Teacher extends Person implements Reportable{
 	protected String subject;
 
 	public Teacher(String name, String subject) {
@@ -16,6 +16,10 @@ public class Teacher extends Person{
 	public String toString() {
 		return "Teacher [subject=" + subject + ", name=" + name + "]";
 	}
+	@Override
+    public String getReport() {
+        return getName() + " teaches " + subject;
+    }
 	
 	
 

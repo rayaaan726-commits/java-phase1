@@ -1,5 +1,7 @@
 package phase1;
 import java.util.ArrayList;
+import java.util.HashMap;
+
 
 public class StudentDemo {
 	public static Student findTopStudent(ArrayList<Student> students) {
@@ -59,12 +61,42 @@ public class StudentDemo {
 		
 		System.out.println("_____________________________________");
 		Student s4 = new Student("Ahmad", 55);
-		Teacher t1 = new Teacher("Abdullah", "Mathmatics");
+		Teacher t1 = new Teacher("Abdullah", "Mathematics");
 		
 		System.out.println(s4);
 		System.out.println(t1);
-	}
+		
+		ArrayList<Reportable> items = new ArrayList<>();
+		items.add(new Student("Sara", 92));
+		items.add(new Teacher("Abdullah", "Mathematics"));
+		items.add(new Course("Java", 40));
 
+		for (Reportable r : items) {
+		    System.out.println(r.getReport());
+		}
+		
+		// HashMap
+		
+
+		HashMap<String, Integer> ages = new HashMap<>();
+
+		ages.put("Sara", 22);                    // add
+		ages.put("Omar", 25);
+		ages.put("Ali", 19);
+
+		System.out.println(ages.get("Omar"));    // 25
+		System.out.println(ages.size());         // 3
+		System.out.println(ages.containsKey("Ali"));   // true
+		ages.put("Omar", 26);                    // same key: replaces the old value
+		ages.remove("Ali");                      // remove by key
+		System.out.println(ages);           // e.g. {Sara=22, Omar=26}
+		System.out.println("______________________________________");
+		
+		for (String name : ages.keySet()) {
+		    System.out.println(name + " is " + ages.get(name));
+		}
+	}
+     
 	
 	
 
