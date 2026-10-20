@@ -2,6 +2,7 @@ package phase1;
 import java.util.HashMap;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.Stack;
 public class Phase1HashMap {
 	
 	public static HashMap<String, Integer> countWords(String[] words) {
@@ -12,7 +13,6 @@ public class Phase1HashMap {
 	    return counts;
 	}
 	public static int firstRepeated(int[] arr) {
-	    HashMap<Integer, Integer> counts = new HashMap<>();
 	    HashMap<Integer, Integer> seen = new HashMap<>();
 	    for (int a : arr) {
 	        if (seen.containsKey(a)) {
@@ -31,6 +31,39 @@ public class Phase1HashMap {
 	        System.out.println(s);
 	    }
 	}
+	
+	public static String reverseWord(String word) {
+		Stack<Character> stack = new Stack<>();
+
+		for (int i = 0; i < word.length(); i++) {
+		    stack.push(word.charAt(i));
+		}
+
+		String reversed = "";
+		while (!stack.isEmpty()) {
+		    reversed += stack.pop();
+		}
+		return reversed;
+	}
+	public static boolean isBalanced(String text) {
+	    Stack<Character> stack = new Stack<>();
+	    for (int i = 0; i < text.length(); i++) {
+	        char c = text.charAt(i);
+	        if (c == '(') {
+	            stack.push('(');
+	        } else if (c == ')') {
+	            if (stack.isEmpty()) {
+	               return false;
+	            }
+	           stack.pop();
+	        }
+	    }
+	    if (stack.isEmpty()) {
+            
+         }
+	    	return stack.isEmpty();
+	}
+	
 	
 	public static void main(String [] args) {
 		
@@ -63,6 +96,26 @@ public class Phase1HashMap {
 		System.out.println(firstRepeated(new int[]{3, 5, 2, 5, 3}));   // 5
 		System.out.println(firstRepeated(new int[]{1, 2, 3}));         // -1
 		System.out.println(firstRepeated(new int[]{}));                // -1
+		
+		String word = "java";
+		Stack<Character> stack = new Stack<>();
+
+		for (int i = 0; i < word.length(); i++) {
+		    stack.push(word.charAt(i));
+		}
+
+		String reversed = "";
+		while (!stack.isEmpty()) {
+		    reversed += stack.pop();
+		}
+		System.out.println(reversed);   // avaj
+		
+		System.out.println(reverseWord("Ahmad"));
+		
+		System.out.println(isBalanced("(a+b)"));   // true
+		System.out.println(isBalanced("((a)"));
+		System.out.println(isBalanced(")("));
+		System.out.println(isBalanced(""));
 	}
 	
 
