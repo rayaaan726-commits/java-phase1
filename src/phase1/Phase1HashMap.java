@@ -1,6 +1,7 @@
 package phase1;
 import java.util.HashMap;
 import java.util.Arrays;
+import java.util.Scanner;
 public class Phase1HashMap {
 	
 	public static HashMap<String, Integer> countWords(String[] words) {
@@ -34,6 +35,17 @@ public class Phase1HashMap {
 
 		findByName(map, "Sara");   // Sara: 92 (A)
 		findByName(map, "Zed");    // Student not found
+		
+		Scanner input = new Scanner(System.in);
+		while (true) {
+		    System.out.print("Enter a name (or exit): ");
+		    String name = input.nextLine();
+		    if (name.equals("exit")) {
+		        break;
+		    }
+		    findByName(map, name);
+		}
+		input.close();
 		
 		
 	}
