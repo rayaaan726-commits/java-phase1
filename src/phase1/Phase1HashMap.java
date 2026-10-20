@@ -11,6 +11,17 @@ public class Phase1HashMap {
 	    }
 	    return counts;
 	}
+	public static int firstRepeated(int[] arr) {
+	    HashMap<Integer, Integer> counts = new HashMap<>();
+	    HashMap<Integer, Integer> seen = new HashMap<>();
+	    for (int a : arr) {
+	        if (seen.containsKey(a)) {
+	            return a;      // already seen: this is the answer
+	        }
+	        seen.put(a, 1);      // first time: remember it
+	    }
+	    return -1;
+	}
 	
 	public static void findByName(HashMap<String, Student> map, String name) {
 	    Student s = map.get(name);
@@ -48,6 +59,10 @@ public class Phase1HashMap {
 		input.close();
 		
 		
+		
+		System.out.println(firstRepeated(new int[]{3, 5, 2, 5, 3}));   // 5
+		System.out.println(firstRepeated(new int[]{1, 2, 3}));         // -1
+		System.out.println(firstRepeated(new int[]{}));                // -1
 	}
 	
 
