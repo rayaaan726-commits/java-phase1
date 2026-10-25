@@ -1,5 +1,7 @@
 package phase1;
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Stack;
@@ -97,7 +99,7 @@ public class Phase1HashMap {
 		System.out.println(firstRepeated(new int[]{1, 2, 3}));         // -1
 		System.out.println(firstRepeated(new int[]{}));                // -1
 		
-		String word = "java";
+		/*String word = "java";
 		Stack<Character> stack = new Stack<>();
 
 		for (int i = 0; i < word.length(); i++) {
@@ -108,14 +110,29 @@ public class Phase1HashMap {
 		while (!stack.isEmpty()) {
 		    reversed += stack.pop();
 		}
-		System.out.println(reversed);   // avaj
+		System.out.println(reversed);*/   // avaj
 		
 		System.out.println(reverseWord("Ahmad"));
+		System.out.println(reverseWord("java"));
+
 		
 		System.out.println(isBalanced("(a+b)"));   // true
 		System.out.println(isBalanced("((a)"));
 		System.out.println(isBalanced(")("));
 		System.out.println(isBalanced(""));
+		
+		
+		Queue<String> queue = new LinkedList<>();
+		queue.add("Sara");
+		queue.add("Omar");
+		queue.add("Ali");
+		queue.add("Ahmad");
+		queue.add("Rayan");
+
+		while (!queue.isEmpty()) {
+		    System.out.println("Serving " +queue.poll());   // which method removes and returns the front?
+		}
+		System.out.println("Queue is empty");
 	}
 	
 
