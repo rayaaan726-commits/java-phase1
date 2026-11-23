@@ -95,6 +95,16 @@ public class StudentDemo {
 		for (String name : ages.keySet()) {
 		    System.out.println(name + " is " + ages.get(name));
 		}
+		
+		System.out.println("_______________________________________________");
+		
+		
+		try {
+		    s.setScore(150);
+		} catch (IllegalArgumentException e) {
+		    System.out.println("Rejected: " + e.getMessage());
+		}
+		System.out.println(s);
 	}
      
 	
