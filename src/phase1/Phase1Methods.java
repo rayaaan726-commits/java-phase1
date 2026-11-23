@@ -85,37 +85,24 @@ public static boolean isEven(int n) {
 		for (int i = arr.length -1; i >=0; i--) {
 			System.out.print(" "+arr[i]);
 		}
+		System.out.println();
 	}
 	
 	public static void main(String args []) {
 
 		int [] arr = {85, 92, 78, 90, 66};
 		
-		int sum2 = 0;
-		for(int a :arr) {
-			sum2 += a;
-			
-		}
-		System.out.println(sum2);
+		System.out.println(sum(arr));
 		
 		System.out.println("Avarege :"+ (double) sum(arr) / arr.length);
 		
-		int max = arr[0];
-		for (int i = 1; i < arr.length; i++) {
-			if (arr[i] >= max) {
-				max = arr[i];
-			}
-			
-		}
-		System.out.println(max);
+		System.out.println("Max is : "+findMax(arr));
 		
 		
-		for (int i = arr.length -1; i >=0; i--) {
-			System.out.println(arr[i]);
-		}
+		printReverse(arr);
 		
 		
-		grade(90);
+		System.out.println(grade(90));
 		
 		 int[] scores = {85, 92, 78, 90, 66};
 		    System.out.println((double)sum(scores)); 
